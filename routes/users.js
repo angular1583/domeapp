@@ -38,7 +38,9 @@ function cache(req, res, next) {
     if (err) throw err;
     if (data != null) {
       console.log('cache found')
-      return res.send(data)
+      return res.json({
+        data: data
+      })
     } else {
       console.log('cache not found')
       next();
