@@ -7,6 +7,7 @@ const client = redis.createClient(REDIS_PORT);
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
+  const photosRedisKey = 'user:photos';
   fetch('https://jsonplaceholder.typicode.com/photos')
   .then(response => response.json())
   .then(photos => {
