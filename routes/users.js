@@ -37,7 +37,7 @@ function cache(req, res, next) {
   client.get(photosRedisKey, (err, data) => {
     if (err) throw err;
     if (data != null) {
-      console.log('cache found', data)
+      console.log('cache found')
       res.send(data)
     } else {
       console.log('cache not found')
