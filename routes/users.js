@@ -16,6 +16,7 @@ router.get('/', cache, async function (req, res, next) {
       client.setex(photosRedisKey, 3600, JSON.stringify(photos))
 
       // Send JSON response to client
+      res.status(200)
       return res.json({ source: 'api', data: photos })
 
     })
